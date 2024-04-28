@@ -14,28 +14,11 @@ cmd = 'sudo apt-get install inkscape -y'
 os.system(cmd)
 cmd = 'sudo apt install iputils-ping -y'
 os.system(cmd)
-cmd = 'mkdir CNC'
+cmd = 'wget -qO- https://repo.vivaldi.com/archive/linux_signing_key.pub | gpg --dearmor | sudo dd of=/usr/share/keyrings/vivaldi-browser.gpg'
 os.system(cmd)
-cmd = 'cd CNC'
+cmd = 'echo "deb [signed-by=/usr/share/keyrings/vivaldi-browser.gpg arch=$(dpkg --print-architecture)] https://repo.vivaldi.com/archive/deb/ stable main" | sudo dd of=/etc/apt/sources.list.d/vivaldi-archive.list'
 os.system(cmd)
-cmd = 'sudo wget https://github.com/processing/processing/releases/download/processing-0270-3.5.4/processing-3.5.4-linux64.tgz'
+cmd = 'sudo apt update && sudo apt install vivaldi-stable'
 os.system(cmd)
-cmd = 'sudo tar -xvf processing-3.5.4-linux64.tgz'
-os.system(cmd)
-cmd = 'mv processing-3.5.4-linux64 ~/Desktop/'
-os.system(cmd)
-cmd = 'git clone https://github.com/Monjurul-Hasan-Sohan/Drawbot_image_to_gcode_v2.git'
-os.system(cmd)
-cmd = 'mv Drawbot_image_to_gcode_v2 ~/Desktop/'
-os.system(cmd)
-cmd = 'git clone https://github.com/Monjurul-Hasan-Sohan/inkscape_svg_to_gcode.git'
-os.system(cmd)
-cmd = 'mv inkscape_svg_to_gcode/* ~/.config/inkscape/extensions/'
-os.system(cmd)
-cmd = 'rm -rf inkscape_svg_to_gcode'
-os.system(cmd)
-cmd = 'git clone https://github.com/Monjurul-Hasan-Sohan/SquiggleDraw'
-os.system(cmd)
-cmd = 'mv SquiggleDraw ~/Desktop/'
-os.system(cmd)
+
 
